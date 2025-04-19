@@ -1,0 +1,443 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+    font-family: 'Sawarabi Mincho',serif;
+}
+.text01 {
+    font-size: 15px;
+}
+h1 {
+    background-color: rgb(14, 14, 80);
+    color: aliceblue;
+    padding-left: 50px;
+    padding-bottom: 20px;
+    padding-top: 5px;
+    position: relative;
+    margin-bottom: 30px;
+}
+.reserve {
+    position: absolute;
+    top: 32px;
+    right: 8px;
+}
+.text02 {
+    color: aliceblue;
+    position: absolute;
+    top: 3px;
+    right: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#dropdownListItem1 {
+    text-transform: uppercase;
+}
+.checkbox-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-toggle {
+    display: none; /* チェックボックスを非表示にする */
+  }
+  
+  .dropdown-trigger {
+    background-color: #e8faf9;
+    color: rgb(14, 14, 80);
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #eaffb0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    border-top: none;
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  }
+  .dropdown-menu li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: rgb(14, 14, 80);
+    /* width: auto; ← 固定幅の例 (削除または auto に変更) */
+    width: 110px; /* 内容に合わせて幅を調整 */
+    min-width: 80px; /* 最低限の幅を設定 (必要に応じて) */
+    font-weight: bold;
+  }
+
+  
+  /* チェックボックスがチェックされたら、次の兄弟要素（メニュー）を表示 */
+  .dropdown-toggle:checked + .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  /* ホバー時にも表示を維持（オプション） */
+  .checkbox-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+.glowing-text {
+    color: aliceblue; 
+    text-shadow:
+      0 0 5px #fff, 
+      0 0 10px #fff,
+      0 0 20px #0ff, 
+      0 0 30px #0ff,
+      0 0 40px #0ff,
+      0 0 50px #0ff;
+  }
+  .glowing-text02 {
+    color: aliceblue; 
+    text-shadow:
+      0 0 5px #fff, 
+      0 0 10px #fff,
+      0 0 20px #0ff, 
+      0 0 30px #0ff,
+      0 0 40px #0ff,
+      0 0 50px #0ff;
+  }
+  .text05 {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    font-weight: bold;
+    font-size: 28px;
+  }
+.glow-button img {
+    position: absolute;
+    top: 3px;
+    right: 130px;
+}
+
+  .slideshow-container {
+    position: relative;
+    width: 1800px; 
+    height: 600px; 
+    overflow: hidden; 
+    margin-bottom: 70px;
+  }
+  .glow-button {
+    display: inline-block;
+    padding: 5px 20px 8px 40px;
+    text-decoration: none;
+    color: aliceblue;
+    background-color: #e971b72d;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+  }
+  
+  .glow-button:hover {
+    background-color: #faf74cd5;
+  }
+  
+  .glow-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease-in-out;
+  }
+  
+  .glow-button:hover::before {
+    left: 100%;
+  }
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 80px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0; 
+    animation: fade 12s infinite; 
+    z-index: 0; 
+  }
+  
+  .slide:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .slide:nth-child(2) {
+    animation-delay: 4s; 
+  }
+  
+  .slide:nth-child(3) {
+    animation-delay: 8s; 
+  }
+  
+  @keyframes fade {
+    0% { opacity: 0; z-index: -1; } 
+    10% { opacity: 1; z-index: 1; } 
+    33.33% { opacity: 1; z-index: 1; } 
+    43.33% { opacity: 0; z-index: 1; } 
+    100% { opacity: 0; z-index: -1; } 
+  }
+.part01 {
+    color: rgb(255, 136, 0);
+    font-size: 30px;
+    letter-spacing: .07em;
+}
+.part02 {
+    color: rgb(255, 136, 0);
+    font-weight: bold;
+    letter-spacing: .03em;
+}
+.text03 {
+    text-align: center;
+    line-height: 1.8;
+}
+.part03 {
+    font-size: 25px;
+}
+.slideshow-container02 {
+    position: relative;
+    width: 1800px; 
+    height: 600px; 
+    overflow: hidden; 
+    margin-top: 70px;
+    margin-bottom: 70px;
+  }
+  .access {
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .access h2 {
+    margin-bottom: 20px;
+  }
+  .access p {
+    font-weight: bold;
+  }
+  address {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    letter-spacing: .05em;
+    line-height: 1.6;
+  }
+
+  iframe {
+    width: 640px;
+    height: 400px;
+    
+  }
+  #form {
+    text-align: center;
+    letter-spacing: .05em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  #form span {
+    font-size: 13px;
+  }
+
+  .date-picker {
+    font-family: sans-serif;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: inline-block;
+  }
+
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+
+  .calendar-body span {
+    text-align: center;
+    color: #777;
+    font-size: 0.8em;
+  }
+
+  .calendar-body button {
+    border: none;
+    background: none;
+    padding: 8px;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .calendar-body button.selected {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+  }
+
+  #selectedDate {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+
+ footer {
+    background-color: rgb(14, 14, 80);
+    color: aliceblue;
+    text-align: center;
+  }
+  h2 {
+    color: rgb(14, 14, 80);
+    border: solid #eaffb0;
+    border-radius: 3px;
+    display: block;
+    margin: 5px 450px;
+    background-color: #eaffb0;
+    text-align: center;
+    letter-spacing: .06em;
+  }
+  .text11 span {
+    font-weight: bold;
+    font-size: 22px;
+  }
+  .text11 {
+    text-align: center;
+    letter-spacing: .05em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  .image11 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  .image11 p {
+    text-decoration: underline;
+    text-decoration-color: gold;
+    text-decoration-thickness: 4px;
+  }
+  .image12 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  .image12 p {
+    text-decoration: underline;
+    text-decoration-color: gold;
+    text-decoration-thickness: 4px;
+  }
+  .text12 {
+    text-align: center;
+    
+  }
+  .text12 span {
+    font-weight: bold;
+    font-size: 22px;
+  }
+  table {
+    width: 40%; /* 必要に応じて幅を指定 */
+    border-collapse: collapse; /* セル間のボーダーを重ねて表示 */
+    margin-bottom: 20px; /* 表の下の余白 */
+    margin-left: 600px;
+  }
+  
+  th, td {
+    border: 1px solid #ccc; /* セルのボーダー */
+    padding: 8px; /* セル内の余白 */
+    text-align: left; /* 文字の左寄せ */
+  }
+  
+  th {
+    background-color: #f0f0f0; /* 見出しセルの背景色 */
+    font-weight: bold; /* 見出しの文字を太字に */
+    width: 100px; /* 見出しセルの幅（必要に応じて調整） */
+  }
+  #dropdownLink3 {
+    text-align: center;
+  }
+  h3 {
+    color: rgb(14, 14, 80);
+    margin-bottom: 20px;
+  }
+  .text13 {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    letter-spacing: .05em;
+  }
+  .text14 span {
+    color: rgb(255, 136, 0);
+    font-weight: bold;
+  }
+  .text14 {
+    margin-bottom: 40px;
+    letter-spacing: .05em;
+    line-height: 1.6;
+  }
+  h4 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  .text15 {
+    margin-bottom: 40px;
+    letter-spacing: .05em;
+    line-height: 1.6;
+  }
+  .text15 span {
+    color: rgb(255, 136, 0);
+    font-weight: bold;
+  }
+  .text16 {
+    margin-bottom: 40px;
+    letter-spacing: .05em;
+    line-height: 1.6;
+  }
+  .text17 {
+    margin-bottom: 40px;
+    letter-spacing: .05em;
+    line-height: 1.6;
+  }
+  .text18 {
+    margin-bottom: 40px;
+    letter-spacing: .05em;
+    line-height: 1.6;
+  }
+  h5 {
+    font-size: 17px;
+    margin-bottom: 2px;
+    margin-top: 10px;
+  }
+.price01 {
+    text-align: center;
+    margin-top: 30px;
+}
+.text20 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.text21 {
+    margin-bottom: 30px;
+}

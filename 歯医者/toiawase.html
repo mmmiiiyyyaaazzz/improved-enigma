@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>短期治療も可能・審美歯科東京</title>
+  
+</head>
+<body>
+    <script>
+        console.log('Hello from HTML!');
+    </script>
+    <header>
+        <h1><span class="text01">医療法人〇団 精密審美会</span><br>東京審美歯科</h1>
+        <div class="reserve">
+        <a href="#form" class="glow-button"><img src="phone.png" alt="電話"><p>0x0-xxxx-xxxx</p></a>
+        </div>
+        <div class="text02">
+            <p><span class="glowing-text">ご予約はこちら</span></p>
+        </div>
+        <div class="text05">
+            <a href="#form"><p><span class="glowing-text02">24時間web受付も可能</span></p></a>
+        </div>
+        <div class="checkbox-dropdown" id="checkboxDropdownContainer">
+            <input type="checkbox" id="dropdownToggleCheckbox" class="dropdown-toggle">
+            <label for="dropdownToggleCheckbox" class="dropdown-trigger" id="dropdownTriggerLabel">menu</label>
+            <ul class="dropdown-menu" id="dropdownMenuList">
+              <li id="dropdownListItem1"><a href="top.html" id="dropdownLink1">home</a></li>
+              <li id="dropdownListItem2"><a href="shoukai.html" id="dropdownLink2">医院紹介</a></li>
+              <li id="dropdownListItem3"><a href="sinryou.html" id="dropdownLink3">診療一覧</a></li>
+              <li id="dropdownListItem4"><a href="tiryouhi.html" id="dropdownLink4">治療費一覧</a></li>
+              <li id="dropdownListItem5"><a href="toiawase.html" id="dropdownLink5">お問い合わせ</a></li>
+            </ul>
+          </div>
+        </header>
+    <main>
+      <sec id="dropdownLink5">
+        <div>
+          <section id="form">
+            <h2>ご予約・お問い合わせ</h2>
+            <p>月～金　10:00～20:00</p>
+            <p>　土　　10:00～18:30</p>
+            <p>日・祝日が休診日となります。</p>
+            <p><a href="tel:0x0-xxxx-xxxx">0x0-xxxx-xxxx</a></p><br>
+            <h2>24時間受付web予約</h2>
+            <form action="" method="">
+            <p>　　お名前　　<input type="text" name="user_name"></p>
+            <p>　 フリガナ 　<input type="text" name="user_name"></p>
+            <p>メールアドレス<input type="email" name="user_mail"></p>
+            <p>　お電話番号　<input type="tel" name="user_phone"></p>
+            <p>診察メニュー
+                <select name="menu_type">
+                    <option value="セラミック治療">セラミック治療</option>
+                    <option value="矯正歯科(歯列矯正)">矯正歯科(歯列矯正)</option>
+                    <option value="インプラント">インプラント</option>
+                    <option value="ホワイトニング">ホワイトニング</option>
+                    <option value="点滴療法">点滴療法</option>
+                </select>
+            </p><br>
+            <p>希望日</p>
+            <div class="date-picker">
+                <div class="calendar-header">
+                  <button id="prevMonth">&lt;</button>
+                  <span id="currentMonthYear"></span>
+                  <button id="nextMonth">&gt;</button>
+                </div>
+                <div id="calendarBody"></div>
+                <div id="selectedDate"></div>
+              </div>
+            <p>日曜・祝日が休診日となります。</p><br>
+            <p>ご相談内容</p>
+            <p><span>ご質問などございましたら下記に入力してください。</span></p>
+            <textarea name="message"></textarea>
+            <p><input type="submit" value="送信"></p>
+            </form>
+        </section>
+        </div>
+      </sec>
+      <sec></sec>
+      <sec></sec>
+      <sec></sec>
+      <sec></sec>
+        
+    </main>
+    <footer>
+        <small><p>©審美歯科東京</p></small>
+    </footer>
+    <script>
+      const currentMonthYearSpan = document.getElementById('currentMonthYear');
+      const prevMonthButton = document.getElementById('prevMonth');
+      const nextMonthButton = document.getElementById('nextMonth');
+      const calendarBody = document.getElementById('calendarBody');
+      const selectedDateDiv = document.getElementById('selectedDate');
+  
+      // 2025年4月を最初に表示する場合 (月は0から始まるため 3)
+      let currentDate = new Date(2025, 3);
+      let selectedDate = null;
+  
+      function generateCalendar(year, month) {
+        calendarBody.innerHTML = '';
+        currentMonthYearSpan.textContent = `${year}年 ${month + 1}月`;
+  
+        const firstDayOfMonth = new Date(year, month, 1);
+        const lastDayOfMonth = new Date(year, month + 1, 0);
+        const daysInMonth = lastDayOfMonth.getDate();
+        const startingDay = firstDayOfMonth.getDay(); // 0 (Sunday) to 6 (Saturday)
+  
+        const daysOfWeek = ['日', '月', '火', '水', '木', '金', '土'];
+        daysOfWeek.forEach(day => {
+          const dayLabel = document.createElement('span');
+          dayLabel.textContent = day;
+          calendarBody.appendChild(dayLabel);
+        });
+  
+        for (let i = 0; i < startingDay; i++) {
+          const emptyCell = document.createElement('div');
+          calendarBody.appendChild(emptyCell);
+        }
+  
+        for (let day = 1; day <= daysInMonth; day++) {
+          const dayButton = document.createElement('button');
+          dayButton.textContent = day;
+          if (selectedDate && selectedDate.getFullYear() === year && selectedDate.getMonth() === month && selectedDate.getDate() === day) {
+            dayButton.classList.add('selected');
+          }
+          dayButton.addEventListener('click', () => {
+            selectedDate = new Date(year, month, day);
+            selectedDateDiv.textContent = `選択された日付: ${selectedDate.getFullYear()}年 ${selectedDate.getMonth() + 1}月 ${selectedDate.getDate()}日`;
+            generateCalendar(year, month); // 再描画して選択状態を更新
+            // ここで選択された年月日をさらに処理する (フォームへの入力など)
+          });
+          calendarBody.appendChild(dayButton);
+        }
+      }
+  
+      function prevMonth() {
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
+      }
+  
+      function nextMonth() {
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
+      }
+  
+      prevMonthButton.addEventListener('click', prevMonth);
+      nextMonthButton.addEventListener('click', nextMonth);
+  
+      // 初期カレンダーの生成
+      generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
+    </script>
+</body>
+</html>
